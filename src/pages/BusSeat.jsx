@@ -1,18 +1,31 @@
-import React from 'react';
 
-const BusSeat = ({ bus, selectedSeat, setSelectedSeat }) => {
-    const { seatDetails, bookedSeat } = bus;
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 
+const BusSeat = ({ bus, date, selectedSeat, setSelectedSeat, refresh }) => {
+    const [trip, setTrip] = useState({})
+    const { seatDetails } = bus;
+    useEffect(() => {
+        fetch(`http://localhost:5000/view-seats?date=${date}&tripId=${bus._id}`)
+            .then(res => res.json())
+            .then(data => {
+                setTrip(data)
+            })
+    }, [date, bus, refresh])
+    const bookedSeat = trip.bookedSeat
+    if (!bookedSeat) {
+        return
+    }
     return (
         <div className="grid grid-cols-2 gap-10">
-            <div className={`grid gap-1 grid-cols-${seatDetails.row === 4 ? 2 : 1}`}>
-                {seatDetails.row === 4 &&
+            <div className={`grid gap-1 grid-cols-${seatDetails?.row === 4 ? 2 : 1}`}>
+                {seatDetails?.row === 4 &&
                     <div className="text-center">
                         {
                             [...Array(seatDetails.perRow)].map((sea, i) => {
                                 let booked = ""
                                 let selectedClass = ""
-                                const seatNumber = seatDetails.row === 4 ? 1 : 0
+                                const seatNumber = seatDetails?.row === 4 ? 1 : 0
                                 const thisSeat = (String.fromCharCode(i + 97) + seatNumber).toUpperCase()
                                 bookedSeat.forEach(element => {
                                     if (element === thisSeat) {

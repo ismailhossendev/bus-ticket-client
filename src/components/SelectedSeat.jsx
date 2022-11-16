@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SelectedSeat = ({ selectedSeat, setSelectedSeat, trip }) => {
+const SelectedSeat = ({ selectedSeat, setSelectedSeat, trip, handleBooking }) => {
     return (
         <div className="overflow-x-auto">
             <p>Red Color Already Booked </p>
@@ -36,7 +36,7 @@ const SelectedSeat = ({ selectedSeat, setSelectedSeat, trip }) => {
             </table>
             <div className="flex gap-3 my-3">
                 <button onClick={() => setSelectedSeat([])} className='py-1 px-4 bg-rose-500 hover:bg-rose-600 text-white rounded'>Cancel</button>
-                <button className='py-1 px-4 bg-yellow-400  text-rose-900 rounded hover:bg-yellow-500'>Confirm</button>
+                <button onClick={handleBooking} className='py-1 px-4 bg-yellow-400  text-rose-900 rounded hover:bg-yellow-500'>Confirm</button>
             </div>
         </div>
 

@@ -1,9 +1,19 @@
-import React from 'react';
+
+import { DayPicker } from 'react-day-picker';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
+import { mainContext } from '../contexts/MainContext';
 
 const Hero = () => {
+    const { setDate, date } = useContext(mainContext);
+    let footer = <p>Please pick a day.</p>;
+    if (date) {
+        footer = <p>You picked {format(date, 'PP')}.</p>;
+    }
     return (
         <section className="p-6 dark:bg-gray-800 dark:text-gray-100">
+
             <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5" bis_skin_checked="1">
                 <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-900" bis_skin_checked="1">
                     <span className="block mb-2 dark:text-violet-400">Find Your Best Bus Ticket in online</span>
@@ -20,7 +30,12 @@ const Hero = () => {
                         <Link to='/search' type="submit" className="w-full py-2 font-semibold rounded bg-violet-400 text-gray-900">Find Buses</Link>
                     </form>
                 </div>
-                <img src="https://source.unsplash.com/random/480x360" alt="" className="object-cover w-full rounded-md xl:col-span-3 dark:bg-gray-500" />
+                <DayPicker
+                    mode='single'
+                    selected={date}
+                    onSelect={setDate}
+                    footer={footer}
+                />
             </div>
         </section>
     );

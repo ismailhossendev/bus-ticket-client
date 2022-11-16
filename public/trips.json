@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "Kuakata Express",
         "busType": "Non Ac",
         "origin": "DHAKA",
@@ -13,14 +12,9 @@
             "row": 4,
             "perRow": 10
         },
-        "bookedSeat": [
-            "A1",
-            "A2",
-            "J1"
-        ]
+        "bookedSeat": []
     },
     {
-        "_id": 2,
         "name": "Kuakata Express",
         "busType": "Non Ac",
         "origin": "DHAKA",
@@ -33,14 +27,9 @@
             "row": 4,
             "perRow": 10
         },
-        "bookedSeat": [
-            "A1",
-            "A2",
-            "J1"
-        ]
+        "bookedSeat": []
     },
     {
-        "_id": 3,
         "name": "Kuakata Express",
         "busType": "Ac",
         "origin": "DHAKA",
@@ -53,14 +42,9 @@
             "row": 3,
             "perRow": 9
         },
-        "bookedSeat": [
-            "A3",
-            "C2",
-            "C1"
-        ]
+        "bookedSeat": []
     },
     {
-        "_id": 4,
         "name": "Kuakata Express",
         "busType": "Non Ac",
         "origin": "DHAKA",
@@ -73,10 +57,6 @@
             "row": 4,
             "perRow": 10
         },
-        "bookedSeat": [
-            "A1",
-            "A2",
-            "J1"
-        ]
+        "bookedSeat": []
     }
 ]
