@@ -1,0 +1,82 @@
+[
+    {
+        "_id": 1,
+        "name": "Kuakata Express",
+        "busType": "Non Ac",
+        "origin": "DHAKA",
+        "price": 800,
+        "destination": "KUAKATA",
+        "date": "",
+        "schedule": "08:00 AM",
+        "seatDetails": {
+            "seat": 40,
+            "row": 4,
+            "perRow": 10
+        },
+        "bookedSeat": [
+            "A1",
+            "A2",
+            "J1"
+        ]
+    },
+    {
+        "_id": 2,
+        "name": "Kuakata Express",
+        "busType": "Non Ac",
+        "origin": "DHAKA",
+        "price": 800,
+        "destination": "BENAPOLE",
+        "date": "",
+        "schedule": "08:00 AM",
+        "seatDetails": {
+            "seat": 40,
+            "row": 4,
+            "perRow": 10
+        },
+        "bookedSeat": [
+            "A1",
+            "A2",
+            "J1"
+        ]
+    },
+    {
+        "_id": 3,
+        "name": "Kuakata Express",
+        "busType": "Ac",
+        "origin": "DHAKA",
+        "price": 1800,
+        "destination": "KUAKATA",
+        "date": "",
+        "schedule": "08:00 AM",
+        "seatDetails": {
+            "seat": 27,
+            "row": 3,
+            "perRow": 9
+        },
+        "bookedSeat": [
+            "A3",
+            "C2",
+            "C1"
+        ]
+    },
+    {
+        "_id": 4,
+        "name": "Kuakata Express",
+        "busType": "Non Ac",
+        "origin": "DHAKA",
+        "price": 800,
+        "destination": "KUAKATA",
+        "date": "",
+        "schedule": "08:00 AM",
+        "seatDetails": {
+            "seat": 40,
+            "row": 4,
+            "perRow": 10
+        },
+        "bookedSeat": [
+            "A1",
+            "A2",
+            "J1"
+        ]
+    }
+]
