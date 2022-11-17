@@ -1,9 +1,9 @@
 
 import { DayPicker } from 'react-day-picker';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { mainContext } from '../contexts/MainContext';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const { setDate, date } = useContext(mainContext);
@@ -12,30 +12,66 @@ const Hero = () => {
         footer = <p>You picked {format(date, 'PP')}.</p>;
     }
     return (
-        <section className="p-6 dark:bg-gray-800 dark:text-gray-100">
-
-            <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5" bis_skin_checked="1">
-                <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-900" bis_skin_checked="1">
-                    <span className="block mb-2 dark:text-violet-400">Find Your Best Bus Ticket in online</span>
-                    <h1 className="text-5xl font-extrabold dark:text-gray-50">Bus Khoj Bangladesh</h1>
-                    <form className="self-stretch space-y-3 ng-untouched ng-pristine ng-valid my-4">
-                        <div bis_skin_checked="1">
-                            <label for="name" className="text-sm sr-only">Your name</label>
-                            <input id="name" type="text" placeholder="From ex: DHAKA" className="w-full rounded-md focus:ring focus:ring-violet-400 dark:border-gray-700" />
+        <section className="">
+            <div className="bg-rose-600 p-5">
+                <form className='bg-gray-100 '>
+                    <div className="rounded p-3 lg:py-5 lg:px-0  container  mx-auto grid lg:grid-cols-2 gap-5">
+                        <div className="">
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text">From?*</span>
+                                </label>
+                                <select className="select select-primary w-full">
+                                    <option>DHAKA</option>
+                                    <option>KUAKATA</option>
+                                    <option>BARISHAL</option>
+                                </select>
+                            </div>
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text">To?*</span>
+                                </label>
+                                <select className="select select-primary w-full">
+                                    <option>KUAKATA</option>
+                                    <option>BARISHAL</option>
+                                    <option>DHAKA</option>
+                                </select>
+                            </div>
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text">Bus Type</span>
+                                </label>
+                                <select className="select select-primary w-full">
+                                    <option selected>Ac/Non Ac</option>
+                                    <option>Non Ac</option>
+                                    <option>Ac</option>
+                                </select>
+                            </div>
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text">Bus Class?</span>
+                                </label>
+                                <select className="select select-primary w-full">
+                                    <option selected>Economy/business</option>
+                                    <option>Economy</option>
+                                    <option>Business</option>
+                                </select>
+                            </div>
                         </div>
-                        <div bis_skin_checked="1">
-                            <label for="lastname" className="text-sm sr-only">Email address</label>
-                            <input id="lastname" type="text" placeholder="To Ex: KUAKATA" className="w-full rounded-md focus:ring focus:ring-violet-400 dark:border-gray-700" />
+                        <div className="form-control w-full flex items-center ">
+                            <label className="label">
+                                <span className="label-text">Date?</span>
+                            </label>
+                            <DayPicker
+                                mode='single'
+                                selected={date}
+                                onSelect={setDate}
+                                footer={footer}
+                            />
                         </div>
-                        <Link to='/search' type="submit" className="w-full py-2 font-semibold rounded bg-violet-400 text-gray-900">Find Buses</Link>
-                    </form>
-                </div>
-                <DayPicker
-                    mode='single'
-                    selected={date}
-                    onSelect={setDate}
-                    footer={footer}
-                />
+                        <Link to='/search' className='w-full btn bg-rose-600'>Search</Link>
+                    </div>
+                </form>
             </div>
         </section>
     );

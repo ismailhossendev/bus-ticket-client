@@ -23,7 +23,7 @@ const BookingSeat = () => {
     return (
         <div className='container mx-auto'>
             <p>{date}</p>
-            <div className="px-10">
+            <div className="grid lg:grid-cols-2 ">
                 {
                     trips.map(trip => <Trip trip={trip} date={date} />)
                 }
