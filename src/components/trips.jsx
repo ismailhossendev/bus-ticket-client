@@ -18,7 +18,7 @@ const Trip = ({ trip, date }) => {
             seat: selectedSeat,
             bookingDate: date
         };
-
+        
 
         fetch('http://localhost:5000/bookSeat', {
             method: 'POST',
@@ -41,7 +41,7 @@ const Trip = ({ trip, date }) => {
     return (
         <div className="lg:p-6 rounded text-gray-900">
             <div className="flex  gap-5 rounded-lg p-4 shadow-sm shadow-indigo-100">
-                <img alt="Home" src={trip.image} className="h-56 w-full rounded-md object-cover" />
+                <img alt="Home" src={trip.image} className="h-56 w-full rounded-lg object-cover" />
                 <div className="mt-2 text-start">
                     <dl className='text-start'>
                         <div>

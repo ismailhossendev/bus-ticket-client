@@ -19,7 +19,12 @@ const AddTrip = () => {
             data.time = data.time + ' AM'
         }
 
+        const seatDetails = {
+            perRow: data.perRow,
+            row: data.busClass === "Business" ? 3 : 4,
 
+        }
+        data.seatDetails = seatDetails;
         // image upload on imgbb api
         fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_API_KEY}`, {
             method: 'POST',
@@ -63,9 +68,9 @@ const AddTrip = () => {
                     </div>
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text">TIME</span>
+                            <span className="label-text">PRICE/Fare</span>
                         </label>
-                        <input {...register("price")} type="time" className="input input-bordered input-primary w-full " />
+                        <input {...register("price")} type="number" className="input input-bordered input-primary w-full " />
                     </div>
                     <div className="form-control w-full ">
                         <label className="label">
@@ -117,6 +122,18 @@ const AddTrip = () => {
                             <option value="Economy" >Economy</option>
                             <option value="Business" >Business</option>
                         </select>
+                    </div>
+                    <h3 className='mt-2 text-xl font-semibold font-serif'>Seat Details</h3>
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text">Seat Per Row(ex: 10)</span>
+                        </label>
+                        <input {...register("perRow")} type="number" placeholder='Enter Per Row Seat' className="input input-bordered input-primary w-full " />
+                    </div>
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text">Total Seat Column (ec: 4 or 3)</span>
+                        </label>
                     </div>
                     <input type="submit" className='btn w-full my-5' value="ADD TRIP" />
                 </div>
