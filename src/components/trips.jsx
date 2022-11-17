@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import React from 'react';
 import { useState } from 'react';
 import BusSeat from '../pages/BusSeat';
@@ -42,7 +41,7 @@ const Trip = ({ trip, date }) => {
     return (
         <div className="lg:p-6 rounded text-gray-900">
             <div className="flex  gap-5 rounded-lg p-4 shadow-sm shadow-indigo-100">
-                <img alt="Home" src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" className="h-56 w-full rounded-md object-cover" />
+                <img alt="Home" src={trip.image} className="h-56 w-full rounded-md object-cover" />
                 <div className="mt-2 text-start">
                     <dl className='text-start'>
                         <div>
@@ -54,7 +53,7 @@ const Trip = ({ trip, date }) => {
                             <dd className="font-medium">{trip?.name}</dd>
                         </div>
                     </dl>
-                    <div className="mt-6  grid grid-cols-2  gap-8 text-xs space-x-5 ">
+                    <div className="mt-6  lg:grid lg:grid-cols-2 flex flex-col  gap-8 text-xs space-x-5 ">
                         <div className="">
                             <div className="sm:inline-flex sm:shrink-0 sm:items-center">
                                 <svg className="h-4 w-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,8 +89,8 @@ const Trip = ({ trip, date }) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                 </svg>
                                 <div className="mt-1.5 sm:ml-3 sm:mt-0">
-                                    <p className="text-gray-500">Bus Type</p>
-                                    <p className="font-medium">{trip.busType}</p>
+                                    <p className="text-gray-500">Seat Type</p>
+                                    <p className="font-medium">{trip.busClass}</p>
                                 </div>
                             </div>
                         </div>

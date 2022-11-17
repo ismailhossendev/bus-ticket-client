@@ -9,8 +9,7 @@ const MainContext = ({ children }) => {
     const [date, setDate] = useState(new Date());
     const dateFormat = format(date, "PP")
 
-
-    const value = { date, setDate, dateFormat }
+    const value = { date, setDate, dateFormat}
     return (
         <mainContext.Provider value={value}>
             {children}
